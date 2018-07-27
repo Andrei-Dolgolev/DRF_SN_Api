@@ -1,6 +1,6 @@
 # Test Task.
 #### Create Social Network Rest Api with models User and Post.
-##### I give some information about develop and about using bot for this project.
+##### Some information about project and bot using.
 
 ## Geting Started
 ### -Model
@@ -66,8 +66,9 @@ response
 ```
  
 ### -View
-For Post/list adding pagination and some field in serializer 
----
+For Post/list add pagination and some field in serializer 
+
+For user/create add api_call method for verify email(emailhunter.co) and get user location(clearbit.com/enrichment)
 
 ## Bot for api(Bot_Api.py)
 
