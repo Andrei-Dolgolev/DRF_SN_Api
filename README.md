@@ -39,15 +39,35 @@ So Django rest framework simple router give use next paths and metods
 This work well for User and Post model. For some actiont our need authorized user. 
 
 ##### Like
-Model using 2 view like and unlike with PUT method. Like create instance if his not exist and add 1 to cont if instance exist.   
-URL api/post/"title"/like
-Unlike make count-1 and desroy instance if count=0
 
+* Model using 2 view with PUT method. 
+
+* Like
+  create instance if his not exist and 
+  add 1 to cont if instance exist.
+  URL api/post/"title"/like 
+  
+* Unlike
+  make count-1 and 
+  desroy instance if count=0
+  
 #### -Authorize (JWT)
 Send POST to api/user/obtain_token with walid email and password and you get token for your client side.
+```
+request
+{email:   ,
+ password:   }
+```
+
+```
+response
+{email:   ,
+ token:   }
+```
  
 ### -View
 For Post/list adding pagination and some field in serializer 
+---
 
 ## Bot for api(Bot_Api.py)
 
