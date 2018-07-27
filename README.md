@@ -2,9 +2,9 @@
 #### Create Social Network Rest Api with models User and Post.
 ##### Some information about project and bot using.
 
-## Geting Started
+## Getting Started
 ### -Model
-We create 3 model:
+We have 3 model:
 
 | User          |     | Post            |
 |:-------------:| :-: |:---------------:|
@@ -15,7 +15,7 @@ We create 3 model:
 | city          | :-: | content         |
 | ......        | :-: | ......          |
 
-Table Like giving us infomation about how much user liked this post(multlike accepted).  
+Model Like giving us infomation about how much user liked this post(multlike accepted).  
 
 
 | Like          |
@@ -27,27 +27,39 @@ Table Like giving us infomation about how much user liked this post(multlike acc
 After we create 3 Django app user/post/like and describe his model next task it constract his routing.
 So Django rest framework simple router give use next paths and metods
 
-| URL           | Method          | Action          |
-|:-------------:|:---------------:|:---------------:|
-| user/         | GET             | list            |
-| user/         | POST            | create          |
-| user/slug     | GET             | retrieve        |
-| user/slug     | PUT             | update          |
-| user/slug     | PATCH           | partial_update  |
-| user/slug     | DELETE          | destroy         |
+| URL           | Method          | Action          | Premission      |
+|:-------------:|:---------------:|:---------------:|:---------------:|
+| user/         | GET             | list            | admin           |
+| user/         | POST            | create          | any             |
+| user/id       | GET             | retrieve        | auth user       |
+| user/id       | PUT             | update          | auth user       |
+| user/id       | PATCH           | partial_update  | auth user       |
+| user/id       | DELETE          | destroy         | auth user       |
 
-This work well for User and Post model. For some actiont need need authorized user. 
+for post:
+
+| URL           | Method          | Action          | Premission      |
+|:-------------:|:---------------:|:---------------:|:---------------:|
+| post/         | GET             | list            | any             |
+| post/         | POST            | create          | auth user       |
+| post/title    | GET             | retrieve        | auth user       |
+| post/title    | PUT             | update          | auth user       |
+| post/title    | PATCH           | partial_update  | auth user       |
+| post/title    | DELETE          | destroy         | auth user       |
+
+
+This work well for User and Post model.
 
 ##### Like
 
 * Model using 2 view with PUT method. 
 
-* Like
+* 'like/'
   create instance if his not exist and 
   add 1 to cont if instance exist.
   URL api/post/"title"/like 
   
-* Unlike
+* 'unlike/'
   make count-1 and 
   desroy instance if count=0
   
