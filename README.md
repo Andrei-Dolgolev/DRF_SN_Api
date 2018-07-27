@@ -36,7 +36,7 @@ So Django rest framework simple router give use next paths and metods
 | user/slug     | PATCH           | partial_update  |
 | user/slug     | DELETE          | destroy         |
 
-This work well for User and Post model. For some actiont our need authorized user. 
+This work well for User and Post model. For some actiont need need authorized user. 
 
 ##### Like
 
